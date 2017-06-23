@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --env=dev",
-    "stats": "webpack --env=stats",
+    "stats": "webpack --env=stats --display-optimization-bailout",
     "build": "webpack --env=prod"
   },
   "devDependencies": {
