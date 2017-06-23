@@ -1,0 +1,17 @@
+.nav-header {
+  background: linear-gradient(hsla(227, 100%, 17%, .6), hsla(0%, 0%, 0%, .0));
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  .logo {
+    margin: 0;
+  }
+  a {
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    &.active {
+      border-bottom: 1px solid #FFE100;
+    }
+  }
+}

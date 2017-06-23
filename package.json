@@ -1,17 +1,20 @@
 {
   "license": "UNLICENSED",
   "dependencies": {
+    "normalize.css": "^7.0.0",
     "object-assign": "^4.1.1",
     "promise": "^7.1.1",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "next",
-    "webpack": "^2.6.0",
+    "webpack": "^3.0.0",
     "whatwg-fetch": "^2.0.3"
   },
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack"
+    "start": "webpack-dev-server --env=dev",
+    "stats": "webpack --env=stats",
+    "build": "webpack --env=prod"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
@@ -29,6 +32,8 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "file-loader": "^0.11.2",
     "flow-bin": "^0.46.0",
     "html-loader": "^0.4.5",
     "html-webpack-plugin": "^2.28.0",
@@ -38,6 +43,8 @@
     "react-hot-loader": "next",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.1",
+    "url-loader": "^0.5.9",
+    "webpack-bundle-analyzer": "^2.8.2",
     "webpack-dev-server": "^2.4.5"
   }
 }

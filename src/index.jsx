@@ -1,27 +1,20 @@
 /* eslint import/no-extraneous-dependencies: 'off' */
 
+import 'normalize.css';
+
 import React from 'react';
 import { render } from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
 
+import './index.scss';
 import App from './app/App';
 
 const root = document.getElementById('root');
 
 const bootstrap = (Component) => {
   render(
-    <AppContainer>
-      <Component />
-    </AppContainer>,
+    <Component />,
     root,
   );
 };
 
 bootstrap(App);
-
-if (module.hot) {
-  module.hot.accept('./app/App', () => {
-    bootstrap(App);
-  });
-}
-

@@ -1,0 +1,43 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  background: #F7FFFE;
+  color: #131B23;
+  height: 100%;
+}
+
+#root,
+main {
+  height: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+}
+
+
+header {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      display: inline-block;
+    } 
+  }
+}
+
+article {
+  & > section {
+    min-height: 50vh;
+    padding: 20px;
+  }
+}

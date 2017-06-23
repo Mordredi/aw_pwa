@@ -1,10 +1,24 @@
-/* eslint react/prefer-stateless-function: "off" */
-import React, { Component } from 'react';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom';
 
-export default class App extends Component {
-  render() {
-    return (
-      <h1>Hello World!!!</h1>
-    );
-  }
-}
+import { Header } from './header';
+import { Home } from './home';
+import { ProgrammerPage } from './programmer';
+import { PerformerPage } from './performer';
+
+export default () => (
+  <Router>
+    <main>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/programmer" component={ProgrammerPage} />
+        <Route path="/performer" component={PerformerPage} />
+      </Switch>
+    </main>
+  </Router>
+);
