@@ -19,10 +19,10 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   output: {
-    filename: '[name].js',
+    filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    sourceMapFilename: '[name].map',
+    sourceMapFilename: '[name].[chunkhash].map',
   },
   module: {
     rules: [
@@ -65,7 +65,7 @@ module.exports = {
       minimize: true,
       debug: false
     }),
-    new ExtractTextPlugin('[name].bundle.css'),
+    new ExtractTextPlugin('[name].[chunkhash].css'),
     new webpack.optimize.UglifyJsPlugin({
       beautify: false,
       mangle: {
