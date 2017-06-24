@@ -10,7 +10,6 @@ html {
   height: 100%;
 }
 
-#root,
 main {
   height: 100%;
 }
@@ -18,6 +17,9 @@ main {
 body {
   font-family: 'Open Sans', sans-serif;
   height: 100%;
+  & > div {
+    height: 100%;
+  }
 }
 
 
@@ -36,6 +38,7 @@ header {
 }
 
 article {
+  height: 100%;
   & > section {
     min-height: 50vh;
     padding: 20px;

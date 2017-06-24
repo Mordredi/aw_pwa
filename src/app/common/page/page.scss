@@ -1,18 +1,11 @@
-article {
-  height: 100%;
-}
-
-.section-header {
+.sectionHeader {
   background: url('../../../img/AW_135_BW.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 25%;
   height: 50vh;
   padding: 10px;
-  h2 {
-    margin: 0;
-  }
-  a {
+  .sectionLink {
     color: white;
     padding: 10px;
   }

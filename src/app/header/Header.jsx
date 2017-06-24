@@ -1,14 +1,14 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
-import './header.scss';
+import styles from './header.scss';
 
 export const Header = () => (
-  <header className="nav-header">
-    <h1 className="logo"><Link to="/">Arthur Wright</Link></h1>
+  <header className={styles.navHeader}>
+    <h1 className={styles.logo}><Link className={styles.link} to="/">Arthur Wright</Link></h1>
     <ul>
-      <li><NavLink activeClassName="active" to="/programmer">Programmer</NavLink></li>
-      <li><NavLink activeClassName="active" to="/performer">Performer</NavLink></li>
+      <li><NavLink className={styles.link} activeClassName={styles.active} to="/programmer">Programmer</NavLink></li>
+      <li><NavLink className={styles.link} activeClassName={styles.active} to="/performer">Performer</NavLink></li>
     </ul>
   </header>
 );

@@ -41,7 +41,13 @@ module.exports = {
         use: ['html-loader'],
       }, {
         test: /.(s?)css$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ['style-loader', {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            localIdentName: '[hash:8]',
+          },
+        }, 'sass-loader'],
       }, {
         test: /\.(jpg|png|svg)$/,
         loader: 'url-loader',

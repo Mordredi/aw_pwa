@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from '../common/page/page.scss';
 
 export const Home = () => (
   <article>
-    <header className="section-header" />
+    <header className={styles.sectionHeader} />
     <section>
       <p>Welcome to the online home of Arthur Wright.</p>
       <p>

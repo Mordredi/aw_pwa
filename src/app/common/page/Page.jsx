@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 import { Link, Route } from 'react-router-dom';
 
-import './page.scss';
+import styles from './page.scss';
 
 export const Page = ({ routeProps, match }) => (
   <article>
-    <header className={`section-header ${routeProps.section.toLowerCase()}`}>
+    <header className={styles.sectionHeader}>
       <ul>
-        { routeProps.routes.map(({ path, label }) => <li key={label}><Link to={match.url + path}>{ label }</Link></li>) }
+        { routeProps.routes.map(({ path, label }) => <li key={label}><Link className={styles.sectionLink} to={match.url + path}>{ label }</Link></li>) }
       </ul>
     </header>
     <section>
