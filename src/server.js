@@ -7,6 +7,7 @@ import { StaticRouter } from 'react-router';
 import App from './app/App';
 
 const handleRender = (req, res) => {
+  const context = {};
   const html = ReactDOMServer.renderToString(
     <StaticRouter
       location={req.url}
@@ -15,7 +16,7 @@ const handleRender = (req, res) => {
       <App />
     </StaticRouter>
   )
-  fs.readFile('./index.html', 'utf8', function (err, data) {
+  fs.readFile('./dist/index.html', 'utf8', function (err, data) {
     if (err) throw err;
     const document = data.replace(/<div id="root">j\/div>/, `<div id="app">${html}</div>`);
     res.send(document);
@@ -28,5 +29,7 @@ app.use('/', express.static(path.join(__dirname, '/')));
 
 app.get('*', handleRender)
 
-app.listen(3000);
+app.listen(3000, () => {
+  console.log('listening on port 3000');
+});
 

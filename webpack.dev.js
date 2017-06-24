@@ -34,7 +34,12 @@ module.exports = {
         enforce: 'pre',
       }, {
         test: /.jsx?$/,
-        use: ['babel-loader'],
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            forceEnv: 'client',
+          },
+        }],
         exclude: /node_modules/, 
       }, {
         test: /.html$/,

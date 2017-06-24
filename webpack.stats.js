@@ -35,7 +35,12 @@ module.exports = {
         enforce: 'pre',
       }, {
         test: /.jsx?$/,
-        use: ['babel-loader'],
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            forceEnv: 'client',
+          },
+        }],
         exclude: /node_modules/, 
       }, {
         test: /.html$/,
@@ -44,7 +49,13 @@ module.exports = {
         test: /.(s?)css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader'],
+          use: [{
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[hash:8]',
+            },
+          }, 'sass-loader'],
         }),
       }, {
         test: /\.(jpg|png|svg)$/,

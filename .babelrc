@@ -1,4 +1,20 @@
 {
-  "presets": ["react", ["es2015", {"modules": false}], "stage-3"],
-  "plugins": ["dynamic-import-node", "syntax-dynamic-import", "react-hot-loader/babel"]
+  "env": {
+    "client": {
+      "presets": ["react", ["es2015", {"modules": false}], "stage-3"],
+      "plugins": ["dynamic-import-node", "syntax-dynamic-import", "react-hot-loader/babel"]
+    },
+    "server": {
+      "presets": ["react", "es2015", "stage-3"],
+      "plugins": [ 
+        [
+          "css-modules-transform", {
+            "preprocessCss": "./loaders/sass-loader.js", 
+            "generateScopedName": "[hash:8]",
+            "extensions": [".scss"]
+          }
+        ]
+      ]
+    }
+  }
 }
