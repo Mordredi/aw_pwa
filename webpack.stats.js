@@ -38,7 +38,7 @@ module.exports = {
         use: [{
           loader: 'babel-loader',
           options: {
-            forceEnv: 'client',
+            forceEnv: 'production',
           },
         }],
         exclude: /node_modules/, 
@@ -73,7 +73,7 @@ module.exports = {
         NODE_ENV: JSON.stringify('production')
       }
     }),
-    new webpack.IgnorePlugin(/prop-types$/),
+    //new webpack.IgnorePlugin(/prop-types$/),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false
