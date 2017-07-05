@@ -5,10 +5,10 @@ const ProgressPlugin = require('webpack/lib/ProgressPlugin');
 const { CommonsChunkPlugin } = require('webpack').optimize;
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
-
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const entryPoints = ['manifest', 'polyfills', 'vendor', 'main'];
 const ManifestPlugin = require('webpack-manifest-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
+
+const entryPoints = ['manifest', 'polyfills', 'vendor', 'main'];
 
 module.exports = {
   entry: {
@@ -71,9 +71,11 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')
-      }
+      },
     }),
-    new ManifestPlugin(),
+    new ManifestPlugin({
+      fileName: 'webpack-manifest.json', 
+    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false
@@ -107,22 +109,24 @@ module.exports = {
       name: 'manifest'
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
-    //new HtmlWebpackPlugin({
-      //template: './src/index.html',
-      //inject: 'body',
-      //chunksSortMode(left, right) {
-        //const leftIndex = entryPoints.indexOf(left.names[0]);
-        //const rightIndex = entryPoints.indexOf(right.names[0]);
-        //if (leftIndex > rightIndex) {
-          //return 1;
-        //}
-        //if (leftIndex < rightIndex) {
-          //return -1;
-        //}
-        //return 0;
-      //}
-    //}),
     new ProgressPlugin(),
+    new WebpackPwaManifest({
+      name: 'Arthur Wright',
+      short_name: 'ArthurWright',
+      description: 'Programmer/Performer',
+      background_color: '#F7FFFE',
+      start_url: '/?utm_source=homescreen',
+      display: 'standalone',
+      theme_color: '#001357',
+      inject: false,
+      fingerprints: false,
+      icons: [
+        {
+          src: path.resolve('src/img/sample-image.png'),
+          sizes: [192, 512],
+        }, 
+      ],
+    }),
   ]
 };
 

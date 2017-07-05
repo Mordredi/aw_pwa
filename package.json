@@ -10,6 +10,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "next",
+    "spdy": "^3.4.7",
     "webpack": "^3.0.0",
     "whatwg-fetch": "^2.0.3"
   },
@@ -19,7 +20,7 @@
     "prebuild": "rimraf dist",
     "build": "webpack --env=prod",
     "preserver": "npm run build",
-    "server": "BABEL_ENV=server babel src -d dist && node dist/server.js"
+    "server": "BABEL_ENV=server babel src -d dist && nodemon dist/server.js"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
@@ -46,6 +47,7 @@
     "html-loader": "^0.4.5",
     "html-webpack-plugin": "^2.28.0",
     "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0",
     "postcss": "^6.0.1",
     "postcss-loader": "^2.0.5",
     "react-hot-loader": "next",
@@ -55,6 +57,7 @@
     "url-loader": "^0.5.9",
     "webpack-bundle-analyzer": "^2.8.2",
     "webpack-dev-server": "^2.4.5",
-    "webpack-manifest-plugin": "^1.1.0"
+    "webpack-manifest-plugin": "^1.1.0",
+    "webpack-pwa-manifest": "^3.1.0"
   }
 }
