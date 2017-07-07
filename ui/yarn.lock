@@ -1584,13 +1584,13 @@ debug@2.2.0, debug@~2.2.0:
   dependencies:
     ms "0.7.1"
 
-debug@2.6.7, debug@^2.1.1, debug@^2.2.0:
+debug@2.6.7:
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.7.tgz#92bad1f6d05bbb6bba22cca88bcd0ec894c2861e"
   dependencies:
     ms "2.0.0"
 
-debug@^2.6.8:
+debug@^2.1.1, debug@^2.2.0, debug@^2.6.8:
   version "2.6.8"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
   dependencies:
@@ -2553,7 +2553,7 @@ gzip-size@^3.0.0:
   dependencies:
     duplexer "^0.1.1"
 
-handle-thing@^1.2.4, handle-thing@^1.2.5:
+handle-thing@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/handle-thing/-/handle-thing-1.2.5.tgz#fd7aad726bf1a5fd16dfc29b2f7a6601d27139c4"
 
@@ -2710,7 +2710,7 @@ htmlparser2@~3.3.0:
     domutils "1.1"
     readable-stream "1.0"
 
-http-deceiver@^1.2.4, http-deceiver@^1.2.7:
+http-deceiver@^1.2.7:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/http-deceiver/-/http-deceiver-1.2.7.tgz#fa7168944ab9a519d337cb0bec7284dc3e723d87"
 
@@ -5129,7 +5129,7 @@ spdx-license-ids@^1.0.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-1.2.2.tgz#c9df7a3424594ade6bd11900d596696dc06bac57"
 
-spdy-transport@^2.0.15, spdy-transport@^2.0.18:
+spdy-transport@^2.0.18:
   version "2.0.18"
   resolved "https://registry.yarnpkg.com/spdy-transport/-/spdy-transport-2.0.18.tgz#43fc9c56be2cccc12bb3e2754aa971154e836ea6"
   dependencies:
@@ -5139,17 +5139,7 @@ spdy-transport@^2.0.15, spdy-transport@^2.0.18:
     readable-stream "^2.0.1"
     wbuf "^1.4.0"
 
-spdy@^3.4.1:
-  version "3.4.4"
-  resolved "https://registry.yarnpkg.com/spdy/-/spdy-3.4.4.tgz#e0406407ca90ff01b553eb013505442649f5a819"
-  dependencies:
-    debug "^2.2.0"
-    handle-thing "^1.2.4"
-    http-deceiver "^1.2.4"
-    select-hose "^2.0.0"
-    spdy-transport "^2.0.15"
-
-spdy@^3.4.7:
+spdy@^3.4.1, spdy@^3.4.7:
   version "3.4.7"
   resolved "https://registry.yarnpkg.com/spdy/-/spdy-3.4.7.tgz#42ff41ece5cc0f99a3a6c28aabb73f5c3b03acbc"
   dependencies:
